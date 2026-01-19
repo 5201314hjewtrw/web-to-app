@@ -26,6 +26,7 @@ class AppDisguiseManager(private val context: Context) {
     companion object {
         private const val TAG = "AppDisguiseManager"
         private const val SHORTCUT_PREFIX = "multi_icon_"
+        const val REQUEST_CODE_ENABLE_ADMIN = 9001
         
         @Volatile
         private var instance: AppDisguiseManager? = null
@@ -264,9 +265,5 @@ class AppDisguiseManager(private val context: Context) {
         } catch (e: Exception) {
             Log.e(TAG, "显示应用图标失败", e)
         }
-    }
-    
-    companion object RequestCodes {
-        const val REQUEST_CODE_ENABLE_ADMIN = 9001
     }
 }
