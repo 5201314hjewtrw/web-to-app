@@ -111,6 +111,11 @@ class WebViewManager(
                     // 设置默认缩放级别以适应桌面版页面
                     textZoom = 100
                 }
+                
+                // 附加自定义 UA 后缀（在原有 UA 基础上追加）
+                config.customUserAgentSuffix?.takeIf { it.isNotBlank() }?.let { suffix ->
+                    userAgentString = "$userAgentString $suffix"
+                }
 
                 // 混合内容 - 允许 HTTPS 页面加载 HTTP 资源和请求 HTTP 接口
                 mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW

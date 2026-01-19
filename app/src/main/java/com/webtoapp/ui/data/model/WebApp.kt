@@ -163,6 +163,7 @@ data class WebViewConfig(
     val allowContentAccess: Boolean = true,
     val cacheEnabled: Boolean = true,
     val userAgent: String? = null,
+    val customUserAgentSuffix: String? = null,  // 附加到User-Agent末尾的自定义字符串
     val desktopMode: Boolean = false,
     val zoomEnabled: Boolean = true,
     val swipeRefreshEnabled: Boolean = true,

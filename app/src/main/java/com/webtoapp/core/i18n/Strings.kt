@@ -5110,6 +5110,24 @@ object Strings {
         AppLanguage.ENGLISH -> "Open external links in browser"
         AppLanguage.ARABIC -> "فتح الروابط الخارجية في المتصفح"
     }
+    
+    val customUserAgentSuffix: String get() = when (lang) {
+        AppLanguage.CHINESE -> "自定义UA后缀"
+        AppLanguage.ENGLISH -> "Custom UA Suffix"
+        AppLanguage.ARABIC -> "لاحقة وكيل المستخدم المخصصة"
+    }
+    
+    val customUserAgentSuffixHint: String get() = when (lang) {
+        AppLanguage.CHINESE -> "附加到User-Agent末尾的字符串"
+        AppLanguage.ENGLISH -> "String appended to the end of User-Agent"
+        AppLanguage.ARABIC -> "سلسلة مضافة إلى نهاية وكيل المستخدم"
+    }
+    
+    val customUserAgentSuffixPlaceholder: String get() = when (lang) {
+        AppLanguage.CHINESE -> "例如: MyApp/1.0"
+        AppLanguage.ENGLISH -> "e.g., MyApp/1.0"
+        AppLanguage.ARABIC -> "مثال: MyApp/1.0"
+    }
 
     // ==================== 隔离配置选项 ====================
     val fingerprintProtection: String get() = when (lang) {

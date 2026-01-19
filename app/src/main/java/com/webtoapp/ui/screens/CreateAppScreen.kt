@@ -958,6 +958,21 @@ fun WebViewConfigCard(
                     onCheckedChange = { onConfigChange(config.copy(openExternalLinks = it)) }
                 )
                 
+                Spacer(modifier = Modifier.height(8.dp))
+                
+                // 自定义 UA 后缀
+                OutlinedTextField(
+                    value = config.customUserAgentSuffix ?: "",
+                    onValueChange = { 
+                        onConfigChange(config.copy(customUserAgentSuffix = it.ifBlank { null }))
+                    },
+                    label = { Text(Strings.customUserAgentSuffix) },
+                    placeholder = { Text(Strings.customUserAgentSuffixPlaceholder) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                    supportingText = { Text(Strings.customUserAgentSuffixHint) }
+                )
+                
                 Divider(modifier = Modifier.padding(vertical = 8.dp))
                 
                 // APK 导出配置
